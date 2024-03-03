@@ -34,10 +34,13 @@ export default function Output() {
     });
   };
 
+  const lineCount =
+    (JSON.stringify(json, null, 2).match(/\n/g) || "").length + 1;
+
   return (
-    <div className="flex-col items-center justify-center px-8 mt-8 grow">
-      <div className="flex-col w-full space-y-4">
-        <div className="flex justify-between w-full">
+    <div className="flex-col items-center justify-center px-8 mt-8 grow max-w-7xl w-full mb-8">
+      <div className="flex-col space-y-4">
+        <div className="flex justify-between">
           <small className="flex text-sm font-medium leading-none">
             Output
           </small>
@@ -64,6 +67,14 @@ export default function Output() {
               {highlightedCode()}
             </code>
           </pre>
+        )}
+        {json && lineCount > 40 && (
+          <a
+            href="#"
+            className="text-muted-foreground text-sm justify-self-end"
+          >
+            <span>Back to top</span>
+          </a>
         )}
       </div>
     </div>

@@ -7,8 +7,8 @@ export default function Editor() {
   const { input, setInput, autoFix, setAutoFix } = useZustand();
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 mt-8 xl:mt-16 px-8">
-      <div className="flex-col  w-full space-y-4">
+    <div className="flex flex-col items-center justify-center space-y-4 mt-8 xl:mt-16 px-8 max-w-7xl w-full">
+      <div className="flex-col w-full space-y-4">
         <div className="flex justify-between">
           <small className="flex text-sm font-medium leading-none">
             Paste your json here
