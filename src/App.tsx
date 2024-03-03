@@ -1,4 +1,5 @@
 import Editor from "./components/editor";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import Output from "./components/output";
 import { ThemeProvider } from "./components/theme-provider";
@@ -6,9 +7,13 @@ import { ThemeProvider } from "./components/theme-provider";
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <Header />
-      <Editor />
-      <Output />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <Editor />
+        <Output />
+        <Footer />
+      </div>
+      
     </ThemeProvider>
   );
 }

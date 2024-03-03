@@ -35,7 +35,7 @@ export default function Output() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-8 mt-8">
+    <div className="flex-col items-center justify-center px-8 mt-8 grow">
       <div className="flex-col w-full space-y-4">
         <div className="flex justify-between w-full">
           <small className="flex text-sm font-medium leading-none">
