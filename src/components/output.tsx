@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useJsonStore } from "./zustand";
+import { useZustand } from "./zustand";
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
 import "highlight.js/styles/grayscale.css";
@@ -11,7 +11,7 @@ import { useToast } from "./ui/use-toast";
 hljs.registerLanguage("json", json);
 
 export default function Output() {
-  const { json, error } = useJsonStore();
+  const { json, error } = useZustand();
   const { toast } = useToast();
 
   useEffect(() => {

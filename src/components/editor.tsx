@@ -1,10 +1,10 @@
 import { Textarea } from "./ui/textarea";
-import { useJsonStore } from "./zustand";
+import { useZustand as useZustand } from "./zustand";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
 export default function Editor() {
-  const { input, setInput, autoFix, setAutoFix } = useJsonStore();
+  const { input, setInput, autoFix, setAutoFix } = useZustand();
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4 mt-8 xl:mt-16 px-8">
@@ -17,19 +17,19 @@ export default function Editor() {
             <Switch
               checked={autoFix}
               onCheckedChange={(val) => {
-                console.log(val);
                 setAutoFix(val);
+                setInput(input, val);
               }}
-              id="airplane-mode"
+              id="autofix"
             />
-            <Label htmlFor="airplane-mode">Autofix</Label>
+            <Label htmlFor="autofix">Autofix</Label>
           </div>
         </div>
 
         <Textarea
           autoFocus={true}
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value, autoFix)}
           placeholder="Json input"
           id="message"
           className="h-80 text-muted-foreground"
