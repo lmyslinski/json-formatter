@@ -1,19 +1,16 @@
-import { ModeToggle } from "./components/mode-toggle";
+import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
-import { GithubIcon } from "./components/github-icon";
+import { Label } from "./components/ui/label";
+import { Textarea } from "./components/ui/textarea";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <div className="w-full border-b py-2 px-8">
-        <div className="flex justify-between w-full">
-          <div className="flex items-center">
-            <span className="inline-block font-bold">json formatter</span>
-          </div>
-          <div className="items-center">
-            <GithubIcon />
-            <ModeToggle />
-          </div>
+      <Header />
+      <div className="flex flex-col items-center justify-center space-y-4 mt-8 xl:mt-16 px-8">
+        <div className="flex-col w-full space-y-2">
+          <Label htmlFor="message">Paste your json here </Label>
+          <Textarea autoFocus={true} placeholder="Json input" id="message" className="h-80" />
         </div>
       </div>
     </ThemeProvider>
