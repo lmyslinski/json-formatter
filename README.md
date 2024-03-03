@@ -5,7 +5,7 @@
         <p align="center">A minimalistic json formatter. I've been using other people's json formatters for years, but they all look very cluttered. So I made my own.
         <br>
     </p>
-    
+
 ## Feature list
 
 * JSON Validation & formatting
@@ -19,6 +19,7 @@ Built with:
 
 ## 🚀 Quick start
 
+`pnpm i`
 `pnpm dev`
 
 
