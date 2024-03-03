@@ -19,8 +19,10 @@ Built with:
 
 ## 🚀 Quick start
 
-`pnpm i`
-`pnpm dev`
+`pnpm install && pnpm dev`
+
+
+
 
 
 
