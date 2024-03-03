@@ -54,6 +54,24 @@
     @apply border-border;
   }
 
+  .dark
+  .hljs-string,
+  .hljs-section,
+  .hljs-selector-class,
+  .hljs-template-variable,
+  .hljs-deletion {
+    @apply bg-primary-foreground
+  } 
+
+  .light
+  .hljs-string,
+  .hljs-section,
+  .hljs-selector-class,
+  .hljs-template-variable,
+  .hljs-deletion {
+    @apply bg-primary-foreground
+  } 
+
   body {
     @apply bg-background text-foreground;
   }

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useZustand } from "./zustand";
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
-import "highlight.js/styles/grayscale.css";
+// import "highlight.js/styles/grayscale.min.css";
 import { Copy } from "lucide-react";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
@@ -16,7 +16,7 @@ export default function Output() {
 
   useEffect(() => {
     hljs.highlightAll();
-  }, []);
+  }, [json]);
 
   const highlightedCode = () => {
     if (json) {
@@ -60,7 +60,7 @@ export default function Output() {
                 <Copy />
               </Button>
             </div>
-            <code className="language-json text-muted-foreground text-sm -mt-2 block px-4 pb-4">
+            <code className="language-json text-muted-foreground text-sm -mt-2 block px-4 text-wrap pb-4">
               {highlightedCode()}
             </code>
           </pre>
